@@ -64,7 +64,7 @@ To build and run this application, you will need:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Bus-Travel-Management-System.git
+   git clone https://github.com/sami-dev-dz/Bus-Travel-Management-System.git
    cd Bus-Travel-Management-System
    ```
 
@@ -109,5 +109,5 @@ To build and run this application, you will need:
 
 ### Author
 
-Built with ❤️ by **[Your Name/Team]**  
+Built with ❤️ by **[sami-dev-dz]**  
 *For questions, support, or improvements, please submit an Issue or a Pull Request.*
