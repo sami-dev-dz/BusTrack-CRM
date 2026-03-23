@@ -1,68 +1,113 @@
-# 🚌 Bus Travel Management System
+<div align="center">
 
-## Description du Projet
+# 🌍 Bus Travel Management System
 
-Ce projet est une application de bureau (Desktop Application) développée en **Java Swing** visant à automatiser la gestion complète des voyages et des réservations pour une compagnie de transport par bus.
+**Premium Bus Travel Management System**
 
-Le système est conçu pour remplacer les processus manuels et offrir une plateforme centralisée pour l'administration des ressources et des transactions.
+[![Java Version](https://img.shields.io/badge/Java-17-007396.svg?style=flat&logo=java&logoColor=white)](https://www.oracle.com/java/)
+[![Maven](https://img.shields.io/badge/Maven-Build-C71A22.svg?style=flat&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
+[![Swing](https://img.shields.io/badge/UI-Swing_|_FlatLaf-blue.svg?style=flat)](https://www.formdev.com/flatlaf/)
+[![SQLite](https://img.shields.io/badge/Database-SQLite-003B57.svg?style=flat&logo=sqlite&logoColor=white)](https://sqlite.org/)
+[![License](https://img.shields.io/badge/License-MIT-green.svg?style=flat)](LICENSE)
 
-### 🎯 Fonctionnalités Clés
+*A robust, scalable, and modern desktop application for managing bus fleets, trips, destinations, and passenger reservations.*
 
-* **Gestion des Voyages :** Création et modification des voyages, association d'un bus et de multiples destinations (avec ordre).
-* **Gestion des Réservations :** Enregistrement des Passagers, création, modification, et annulation des réservations, avec vérification de la disponibilité des places et du voyage.
-* **Gestion du Parc :** Administration des Bus (immatriculation, capacité, marque, modèle).
-* **Gestion des Utilisateurs & Rôles :**
-    * **Administrateur** : Gestion complète du système (Bus, Destinations, Voyages, Comptes Réceptionnistes).
-    * **Réceptionniste** : Opérations de Réservation et gestion des Passagers.
-* **Sécurité :** Authentification sécurisée avec hachage des mots de passe (BCrypt).
-
-## 🛠️ Technologies Utilisées
-
-| Catégorie | Technologie | Rôle |
-| :--- | :--- | :--- |
-| **Langage Principal** | Java (JDK) | Programmation Orientée Objet (POO). |
-| **Interface Utilisateur** | Java Swing | Construction de l'interface graphique (GUI). |
-| **Base de Données** | SQLite | Base de données embarquée légère et portable. |
-| **Accès aux Données** | JDBC | Connectivité standard pour interagir avec SQLite. |
-| **Sécurité** | BCrypt (Hachage) | Sécurisation des mots de passe utilisateurs. |
-
-## 📐 Architecture du Logiciel
-
-Le projet utilise une architecture en couches bien définie, centrée sur le patron de conception **DAO (Data Access Object)**, garantissant la clarté et la maintenabilité du code. 
-
-1.  **Model (Entités) :** Classes Java représentant les données métier (`Bus.java`, `Passager.java`, `Reservation.java`, etc.).
-2.  **DAO (Data Access Object) :** Couche responsable de toutes les opérations de persistance (CRUD) vers la base de données SQLite via JDBC. (Exemple : `BusDAO.java`, `ReservationDAO.java`).
-3.  **Panel/View :** Couche de présentation réalisée en Java Swing pour l'interaction utilisateur.
-
-## ⚙️ Démarrage et Installation
-
-### Prérequis
-
-* Java Development Kit (JDK) 8 ou supérieur.
-* Driver JDBC pour SQLite (nécessaire dans le classpath).
-* IDE (IntelliJ IDEA, Eclipse).
-
-### Étapes
-
-1.  **Clonage du dépôt :**
-    ```bash
-    git clone [https://github.com/sami-dev-dz/Bus-Travel-Management-System.git](https://github.com/sami-dev-dz/Bus-Travel-Management-System.git)
-    cd Bus-Travel-Management-System
-    ```
-2.  **Configuration de la Base de Données :** Le fichier de base de données SQLite doit être configuré pour être accessible via la classe de connexion (`DBConnection` dans le code).
-3.  **Lancement :** Exécutez la classe principale du projet dans votre IDE.
+[Overview](#-overview) •
+[Features](#-key-features) •
+[Architecture](#-architecture) •
+[Installation](#-getting-started) •
+[Tech Stack](#-tech-stack) •
+[Security](#-security-features)
 
 ---
 
-### 📝 Conception et Documentation
+</div>
 
-Ce projet est soutenu par une documentation complète incluant :
+## 📖 Overview
 
-* **Diagrammes UML** : Diagramme de Cas d'Utilisation, Diagramme de Classes. 
-* **Modèles Relationnels** : Schéma des tables SQL pour la base de données SQLite.
-* **Diagrammes de Séquence** : Modélisation des processus clés (Authentification, Création de Voyage, Création de Réservation).
+**Bus Travel Management System** is an enterprise-grade travel management solution built in Java. It provides administrators and receptionists with powerful tools to streamline bus organization, trip scheduling, and ticket reservations. Featuring a **modern UI powered by FlatLaf**, it delivers an intuitive and beautiful experience while abstracting the complexities of transport logistics behind a reliable MVC architecture.
 
-## 🤝 Contribution
+## ✨ Key Features
 
-Pour toute suggestion ou amélioration, n'hésitez pas à ouvrir une *issue* ou à soumettre une *Pull Request*.
+- 🚌 **Fleet Management**: Track buses, capacities, models, and assignments.
+- 🗺️ **Dynamic Dispatching**: Manage intricate trips with multi-stop destinations.
+- 🎟️ **Ticketing System**: Intuitive reservation module ensuring no overbooking.
+- 👥 **User Roles**: Distinct permissions for Administrators vs. Receptionists.
+- 🌓 **Adaptive Theming**: Seamless transitioning between Dark and Light modes.
+- 🛡️ **Hardened Security**: BCrypt password hashing and protection against SQL injections.
+- 📊 **Insightful Logging**: Integrated Log4j2 tracking for robust auditability.
 
+## 🏗️ Architecture
+
+Adopting a strict **Model-View-Controller (MVC)** design pattern, the system is highly modular, ensuring sustainable maintainability and scalability.
+
+```
+src/main/java/com/bustravel/
+├── App.java                   # Application Entry Point
+├── model/                     # Core Business Entities (Bus, Voyage, Passager, etc.)
+├── dao/                       # Data Access Objects handling SQLite transactions
+├── service/                   # High-level business logic (e.g., AuthService)
+├── ui/                        # Swing Components and CardLayout Views
+│   └── theme/                 # Centralized UIUtils and FlatLaf ThemeManager
+└── utils/                     # Global utilities (DBConnection, ValidationUtils, Logging)
+```
+
+## 🛠️ Getting Started
+
+### Prerequisites
+
+To build and run this application, you will need:
+- **JDK 17** or newer installed sequentially in your environment variables.
+- **Apache Maven 3.6+** to handle dependencies and the build lifecycle.
+
+### Installation & Execution
+
+1. **Clone the repository**
+   ```bash
+   git clone https://github.com/yourusername/Bus-Travel-Management-System.git
+   cd Bus-Travel-Management-System
+   ```
+
+2. **Compile and Build**
+   Leverage Maven to download dependencies and compile the code:
+   ```bash
+   mvn clean compile
+   ```
+
+3. **Run the Application**
+   Start the application using Maven's exec plugin:
+   ```bash
+   mvn exec:java
+   ```
+
+4. **Generate Executable JAR (Optional)**
+   Create a portable, standalone "fat" JAR containing all dependencies:
+   ```bash
+   mvn package
+   java -jar target/bus-travel-system-1.0.0.jar
+   ```
+
+## 🎨 Tech Stack
+
+| Category        | Technology / Library | Description |
+|-----------------|----------------------|-------------|
+| **Core**        | Java 17              | Robust, object-oriented language. |
+| **Database**    | SQLite               | Lightweight, serverless relational database. |
+| **UI Engine**   | Java Swing + FlatLaf | Modernized Look & Feel framework. |
+| **Security**    | jBCrypt              | Industry standard password hashing. |
+| **Logging**     | Log4j2               | Asynchronous performance logging. |
+| **Build & CI**  | Maven + GH Actions   | Automated dependencies & workflows. |
+
+## 🛡️ Security Features
+
+- **Authentication Logic Separation**: `AuthService` abstracts database authentication completely from the UI.
+- **PreparedStatement Hardening**: Mitigation against SQL injection via parameterized queries.
+- **Data Integrity Validation**: Centralized regex validations (`ValidationUtils`) protecting the DB layer from malformed inputs.
+- **BCrypt Encryption**: One-way salting and hashing protocol securing user credentials.
+
+---
+
+### Author
+
+Built with ❤️ by **[Your Name/Team]**  
+*For questions, support, or improvements, please submit an Issue or a Pull Request.*
