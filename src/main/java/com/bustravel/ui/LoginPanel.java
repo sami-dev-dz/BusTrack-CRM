@@ -23,7 +23,7 @@ public class LoginPanel extends JFrame {
     private static final int MAX_TENTATIVES = 5;
     
     public LoginPanel() {
-        setTitle("Bus Travel Management System - Authentication");
+        setTitle("BusTrack-CRM - Authentication");
         setSize(900, 550);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);

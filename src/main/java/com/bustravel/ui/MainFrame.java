@@ -24,7 +24,7 @@ public class MainFrame extends JFrame {
     public MainFrame(Receptionniste user) {
         this.currentUser = user;
 
-        setTitle("Bus Travel Management System - " + user.getEmail() + " (" + user.getRole() + ")");
+        setTitle("BusTrack-CRM - " + user.getEmail() + " (" + user.getRole() + ")");
         setSize(1200, 750);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
@@ -36,7 +36,7 @@ public class MainFrame extends JFrame {
         topBar.setBorder(BorderFactory.createMatteBorder(0, 0, 1, 0, new Color(200, 200, 200)));
         topBar.setPreferredSize(new Dimension(1200, 60));
 
-        JLabel titleLabel = new JLabel("  Bus Travel Management System", SwingConstants.LEFT); // Add icon here later
+        JLabel titleLabel = new JLabel("  BusTrack-CRM", SwingConstants.LEFT); // Add icon here later
         titleLabel.setFont(ThemeManager.FONT_HEADING.deriveFont(24f));
         titleLabel.setForeground(ThemeManager.PRIMARY_COLOR);
         topBar.add(titleLabel, BorderLayout.WEST);

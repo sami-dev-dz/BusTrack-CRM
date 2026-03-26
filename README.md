@@ -1,8 +1,8 @@
 <div align="center">
 
-# 🌍 Bus Travel Management System
+# 🌍 BusTrack-CRM
 
-**Premium Bus Travel Management System**
+**Premium BusTrack-CRM**
 
 [![Java Version](https://img.shields.io/badge/Java-17-007396.svg?style=flat&logo=java&logoColor=white)](https://www.oracle.com/java/)
 [![Maven](https://img.shields.io/badge/Maven-Build-C71A22.svg?style=flat&logo=apachemaven&logoColor=white)](https://maven.apache.org/)
@@ -25,7 +25,7 @@
 
 ## 📖 Overview
 
-**Bus Travel Management System** is an enterprise-grade travel management solution built in Java. It provides administrators and receptionists with powerful tools to streamline bus organization, trip scheduling, and ticket reservations. Featuring a **modern UI powered by FlatLaf**, it delivers an intuitive and beautiful experience while abstracting the complexities of transport logistics behind a reliable MVC architecture.
+**BusTrack-CRM** is an enterprise-grade travel management solution built in Java. It provides administrators and receptionists with powerful tools to streamline bus organization, trip scheduling, and ticket reservations. Featuring a **modern UI powered by FlatLaf**, it delivers an intuitive and beautiful experience while abstracting the complexities of transport logistics behind a reliable MVC architecture.
 
 ## ✨ Key Features
 
@@ -64,7 +64,7 @@ To build and run this application, you will need:
 
 1. **Clone the repository**
    ```bash
-   git clone https://github.com/yourusername/Bus-Travel-Management-System.git
+   git clone https://github.com/sami-dev-dz/Bus-Travel-Management-System.git
    cd Bus-Travel-Management-System
    ```
 
@@ -86,6 +86,17 @@ To build and run this application, you will need:
    mvn package
    java -jar target/bus-travel-system-1.0.0.jar
    ```
+
+## 🔑 Getting Access
+
+For a quick start or testing, you can use the following default administrative credentials found in the [initial_db.sql](file:///c:/Users/sami-gh/Desktop/BusTrack-CRM/src/main/resources/initial_db.sql).
+
+> [!IMPORTANT]  
+> These credentials are for **local development and demonstration only**. Please ensure you change these passwords before any production deployment.
+
+| Role | Email | Password |
+| :--- | :--- | :--- |
+| **Administrator** | `admin@bustravel.com` | `admin123` |
 
 ## 🎨 Tech Stack
 
@@ -109,5 +120,5 @@ To build and run this application, you will need:
 
 ### Author
 
-Built with ❤️ by **[Your Name/Team]**  
+Built with ❤️ by **[sami-dev-dz]**  
 *For questions, support, or improvements, please submit an Issue or a Pull Request.*

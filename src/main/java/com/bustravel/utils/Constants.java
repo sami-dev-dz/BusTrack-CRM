@@ -5,7 +5,7 @@ public class Constants {
     public static final String DB_URL = "jdbc:sqlite:bus_travel.db";
 
     // Application Details
-    public static final String APP_NAME = "Bus Travel Management System";
+    public static final String APP_NAME = "BusTrack-CRM";
     public static final String APP_VERSION = "1.0.0";
 
     // Error Messages

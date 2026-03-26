@@ -9,7 +9,7 @@
     <version>1.0.0</version>
     <packaging>jar</packaging>
 
-    <name>Bus Travel Management System</name>
+    <name>BusTrack-CRM</name>
     <description>A premium Desktop Application for Bus Travel Management</description>
 
     <properties>

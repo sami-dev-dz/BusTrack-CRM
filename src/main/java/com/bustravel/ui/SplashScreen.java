@@ -18,7 +18,7 @@ public class SplashScreen extends JWindow {
         mainPanel.setBorder(BorderFactory.createLineBorder(ThemeManager.PRIMARY_COLOR.darker(), 2));
         
         // Logo / Title
-        JLabel titleLabel = new JLabel("Bus Travel Management System", SwingConstants.CENTER);
+        JLabel titleLabel = new JLabel("BusTrack-CRM", SwingConstants.CENTER);
         titleLabel.setFont(new Font("Segoe UI", Font.BOLD, 48));
         titleLabel.setForeground(Color.WHITE);
         
